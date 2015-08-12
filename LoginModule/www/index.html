@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html ng-app="MApp">
+<head>
+    <meta charset="utf-8" />
+
+    <!--
+        Customize the content security policy in the meta tag below as needed. Add 'unsafe-inline' to default-src to enable inline JavaScript.
+        For details, see http://go.microsoft.com/fwlink/?LinkID=617521
+    -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+    <title>LoginModule</title>
+
+    <!-- LoginModule references -->
+    <link rel="stylesheet" href="css/angular-material.min.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <style>
+        @charset "utf-8";
+
+        @import url(http://weloveiconfonts.com/api/?family=fontawesome);
+
+        [class*="fontawesome-"]:before {
+            font-family: 'FontAwesome', open-sans;
+        }
+
+        .loginButton {
+            margin-left: auto;
+            margin-right: auto;
+            width: 60%;
+        }
+
+        .facebook-before {
+            background-color: rgb(27, 57, 122);
+            border-radius: 3px 0px 0px 3px;
+            -moz-border-radius: 3px 0px 0px 3px;
+            -webkit-border-radius: 3px 0px 0px 3px;
+            color: #f4f4f4;
+            display: block;
+            float: left;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            width: 20%;
+        }
+
+        .facebook {
+            background-color: rgb(72, 98, 163);
+            border: none;
+            border-radius: 0px 3px 3px 0px;
+            -moz-border-radius: 0px 3px 3px 0px;
+            -webkit-border-radius: 0px 3px 3px 0px;
+            color: #f4f4f4;
+            cursor: pointer;
+            height: 30px;
+            font-size: 14;
+            width: 80%;
+        }
+
+        .twitter-before {
+            background-color: rgb(30,150,230);
+            border-radius: 3px 0px 0px 3px;
+            -moz-border-radius: 3px 0px 0px 3px;
+            -webkit-border-radius: 3px 0px 0px 3px;
+            color: #f4f4f4;
+            display: block;
+            float: left;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            width: 20%;
+        }
+
+        .twitter {
+            background-color: rgb(85, 172, 238);
+            border: none;
+            border-radius: 0px 3px 3px 0px;
+            -moz-border-radius: 0px 3px 3px 0px;
+            -webkit-border-radius: 0px 3px 3px 0px;
+            color: #f4f4f4;
+            cursor: pointer;
+            height: 30px;
+            font-size: 14;
+            width: 80%;
+        }
+    </style>
+
+</head>
+<body ng-controller="AppCtrl">
+    <div style="background-color: rgb(17, 118, 199);background-image: url(images/icon.png);background-position: center center;background-repeat: no-repeat;height:50vh;width:100%;position:relative;">
+    </div>
+    <div style="background-color:white;height:50vh;width:100%;text-align:center;">
+        <br />
+        <br />
+
+        <p class="loginButton">
+            <a href="https://www.facebook.com/dialog/oauth?client_id=103140253133912&redirect_uri=http://localhost:8888/oauthcallback.html&response_type=token" class="facebook-before"><span style="margin-top:7px;" class="fa fa-facebook"></span></a>
+            <a href="https://www.facebook.com/dialog/oauth?client_id=103140253133912&redirect_uri=http://localhost:8888/oauthcallback.html&response_type=token"><button class="facebook">Login with Facbook</button></a>
+        </p>
+        <br />
+        <p class="loginButton">
+            <a class="twitter-before"><span style="margin-top:7px;" class="fa fa-twitter"></span></a>
+            <button class="twitter">Login with Twitter</button>
+        </p>
+
+        <div style="position:absolute; bottom:0;color:grey;font-size:11;margin-left:auto;margin-right:auto">
+            By logging in you are agree to our <a ng-click="showDialog($event)" href="#" style="text-decoration:none">Terms &amp; Conditions</a>
+        </div>
+    </div>
+
+    <!-- Cordova reference, this is added to your app when it's built. -->
+    <script src="cordova.js"></script>
+    <script src="scripts/platformOverrides.js"></script>
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/angular-animate.min.js"></script>
+    <script src="scripts/angular-aria.min.js"></script>
+    <script src="scripts/angular-material.min.js"></script>
+    <script src="scripts/index.js"></script>
+</body>
+</html>
