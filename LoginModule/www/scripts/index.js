@@ -49,6 +49,40 @@
                 });
         }
 
+        $scope.twLogin = function () {
+            console.log("Jai Shri Ram");
+            $cordovaOauth.twitter(" jIE4YRUAo7RYZXiRZhXXUA", "ZbieDM5VsX8E680ESgPXGRjbTALL1amIKIdrB2aRU")
+                .then(function (result) {
+                    var accessToken = result;
+                    alert = $mdDialog.alert({
+                        title: 'Success',
+                        content: result,
+                        ok: 'Close'
+                    });
+
+                    $mdDialog
+                        .show(alert)
+                        .finally(function () {
+                            alert = undefined;
+                        });
+
+                }, function (error) {
+
+                    alert = $mdDialog.alert({
+                        title: 'Error',
+                        content: error,
+                        ok: 'Close'
+                    });
+
+                    $mdDialog
+                        .show(alert)
+                        .finally(function () {
+                            alert = undefined;
+                        });
+
+                });
+        }
+
         $scope.showDialog = function ($event) {
             alert = $mdDialog.alert({
                 title: 'Attention',
