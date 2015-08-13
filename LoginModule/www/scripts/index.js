@@ -10,7 +10,7 @@
     app.controller('AppCtrl', ['$scope', '$mdDialog', '$cordovaOauth', function ($scope, $mdDialog, $cordovaOauth) {
         var alert;
 
-        $scope.fbLogin = function () {
+        $scope.fbLogin = function ($event) {
             console.log("Jai Shri Ram");
             $cordovaOauth.facebook("103140253133912", ["email"])
                 .then(function (result) {
@@ -49,7 +49,7 @@
                 });
         }
 
-        $scope.twLogin = function () {
+        $scope.twLogin = function ($event) {
             console.log("Jai Shri Ram");
             $cordovaOauth.twitter(" jIE4YRUAo7RYZXiRZhXXUA", "ZbieDM5VsX8E680ESgPXGRjbTALL1amIKIdrB2aRU")
                 .then(function (result) {
