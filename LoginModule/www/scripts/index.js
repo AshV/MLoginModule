@@ -11,16 +11,41 @@
         var alert;
 
         $scope.fbLogin = function () {
-          console.log("Jai Shri Ram");
+            console.log("Jai Shri Ram");
             $cordovaOauth.facebook("103140253133912", ["email"])
                 .then(function (result) {
                     var accessToken = result.access_token;
-                    console.log("token is" + accessToken);
+                    alert = $mdDialog.alert({
+                        title: 'Success',
+                        content: accessToken,
+                        ok: 'Close'
+                    });
+
+                    $mdDialog
+                        .show(alert)
+                        .finally(function () {
+                            alert = undefined;
+                        });
+
+                    // console.log("token is" + accessToken);
                     //$scope.createUserWithBaasbox(accessToken, 'facebook', isLink);
                     //$location.path("/profile");
                 }, function (error) {
-                    console.log("There was a problem signing in!  See the console for logs");
-                    console.log(error);
+
+                    alert = $mdDialog.alert({
+                        title: 'Error',
+                        content: error,
+                        ok: 'Close'
+                    });
+
+                    $mdDialog
+                        .show(alert)
+                        .finally(function () {
+                            alert = undefined;
+                        });
+
+                    //   console.log("There was a problem signing in!  See the console for logs");
+                    //  console.log(error);
                 });
         }
 
