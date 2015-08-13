@@ -5,37 +5,52 @@
 (function () {
     "use strict";
 
-            var app = angular.module('MApp', ['ngMaterial']);
+    var app = angular.module('MApp', ['ngMaterial', 'ngCordovaOauth']);
 
-            app.controller('AppCtrl', ['$scope', '$mdDialog', function ($scope, $mdDialog) {
-                var alert;
-                $scope.showDialog = function ($event) {
-                    alert = $mdDialog.alert({
-                        title: 'Attention',
-                        content: 'Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.',
-                        ok: 'Close'
-                    });
+    app.controller('AppCtrl', ['$scope', '$mdDialog', '$cordovaOauth', function ($scope, $mdDialog, $cordovaOauth) {
+        var alert;
 
-                    $mdDialog
-                      .show(alert)
-                      .finally(function () {
-                          alert = undefined;
-                      });
-                }
-            }]);
+        $scope.fbLogin = function () {
+          console.log("Jai Shri Ram");
+            $cordovaOauth.facebook("103140253133912", ["email"])
+                .then(function (result) {
+                    var accessToken = result.access_token;
+                    console.log("token is" + accessToken);
+                    //$scope.createUserWithBaasbox(accessToken, 'facebook', isLink);
+                    //$location.path("/profile");
+                }, function (error) {
+                    console.log("There was a problem signing in!  See the console for logs");
+                    console.log(error);
+                });
+        }
+
+        $scope.showDialog = function ($event) {
+            alert = $mdDialog.alert({
+                title: 'Attention',
+                content: 'Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.',
+                ok: 'Close'
+            });
+
+            $mdDialog
+              .show(alert)
+              .finally(function () {
+                  alert = undefined;
+              });
+        }
+    }]);
 
 
-    document.addEventListener( 'deviceready', onDeviceReady.bind( this ), false );
+    document.addEventListener('deviceready', onDeviceReady.bind(this), false);
 
     function onDeviceReady() {
 
 
 
-       
+
         // Handle the Cordova pause and resume events
-        document.addEventListener( 'pause', onPause.bind( this ), false );
-        document.addEventListener( 'resume', onResume.bind( this ), false );
-        
+        document.addEventListener('pause', onPause.bind(this), false);
+        document.addEventListener('resume', onResume.bind(this), false);
+
         // TODO: Cordova has been loaded. Perform any initialization that requires Cordova here.
     };
 
@@ -46,4 +61,4 @@
     function onResume() {
         // TODO: This application has been reactivated. Restore application state here.
     };
-} )();
+})();
