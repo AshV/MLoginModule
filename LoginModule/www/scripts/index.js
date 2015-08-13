@@ -5,7 +5,7 @@
 (function () {
     "use strict";
 
-    var app = angular.module('MApp', ['ngMaterial', 'ngCordovaOauth']);
+    var app = angular.module('MApp', ['ngMaterial', 'ngTouch', 'ngCordovaOauth']);
 
     app.controller('AppCtrl', ['$scope', '$mdDialog', '$cordovaOauth', function ($scope, $mdDialog, $cordovaOauth) {
         var alert;
