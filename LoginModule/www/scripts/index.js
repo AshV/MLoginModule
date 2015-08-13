@@ -20,38 +20,27 @@
                         content: accessToken,
                         ok: 'Close'
                     });
-
                     $mdDialog
                         .show(alert)
                         .finally(function () {
                             alert = undefined;
                         });
-
-                    // console.log("token is" + accessToken);
-                    //$scope.createUserWithBaasbox(accessToken, 'facebook', isLink);
-                    //$location.path("/profile");
                 }, function (error) {
-
                     alert = $mdDialog.alert({
                         title: 'Error',
                         content: error,
                         ok: 'Close'
                     });
-
                     $mdDialog
                         .show(alert)
                         .finally(function () {
                             alert = undefined;
                         });
-
-                    //   console.log("There was a problem signing in!  See the console for logs");
-                    //  console.log(error);
                 });
         }
 
         $scope.twLogin = function ($event) {
-            console.log("Jai Shri Ram");
-            $cordovaOauth.twitter(" jIE4YRUAo7RYZXiRZhXXUA", "ZbieDM5VsX8E680ESgPXGRjbTALL1amIKIdrB2aRU")
+            $cordovaOauth.twitter("jIE4YRUAo7RYZXiRZhXXUA", "ZbieDM5VsX8E680ESgPXGRjbTALL1amIKIdrB2aRU")
                 .then(function (result) {
                     var accessToken = result;
                     alert = $mdDialog.alert({
@@ -59,7 +48,6 @@
                         content: result,
                         ok: 'Close'
                     });
-
                     $mdDialog
                         .show(alert)
                         .finally(function () {
@@ -67,19 +55,16 @@
                         });
 
                 }, function (error) {
-
                     alert = $mdDialog.alert({
                         title: 'Error',
                         content: error,
                         ok: 'Close'
                     });
-
                     $mdDialog
                         .show(alert)
                         .finally(function () {
                             alert = undefined;
                         });
-
                 });
         }
 
@@ -89,7 +74,6 @@
                 content: 'Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.Here are Terms and Conditons later can be retrieved by some API.',
                 ok: 'Close'
             });
-
             $mdDialog
               .show(alert)
               .finally(function () {
@@ -102,10 +86,6 @@
     document.addEventListener('deviceready', onDeviceReady.bind(this), false);
 
     function onDeviceReady() {
-
-
-
-
         // Handle the Cordova pause and resume events
         document.addEventListener('pause', onPause.bind(this), false);
         document.addEventListener('resume', onResume.bind(this), false);
