@@ -11,16 +11,12 @@
         var alert;
 
         $scope.fbLogin = function ($event) {
-            alert = $mdDialog.alert({
-                title: 'Attention',
-                content: 'Facebook',
-                ok: 'Close'
+            $cordovaOauth.facebook("103140253133912", ["email"]).then(function (result) {
+               window.location.href="http://google.com"
+            }, function (error) {
+                alert("There was a problem signing in!  See the console for logs");
+                console.log(error);
             });
-            $mdDialog
-              .show(alert)
-              .finally(function () {
-                  alert = undefined;
-              });
         //    $cordovaOauth.facebook("103140253133912", ["email"])
         //        .then(function (result) {
         //            var accessToken = result.access_token;
