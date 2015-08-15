@@ -11,7 +11,6 @@
         var alert;
 
         $scope.fbLogin = function ($event) {
-            console.log("Jai Shri Ram");
             $cordovaOauth.facebook("103140253133912", ["email"])
                 .then(function (result) {
                     var accessToken = result.access_token;
@@ -81,6 +80,21 @@
               });
         }
     }]);
+
+
+    app.directive('basicClick', function ($parse, $rootScope) {
+        return {
+            compile: function (elem, attr) {
+                var fn = $parse(attr.basicClick);
+                return function (scope, elem) {
+                    elem.on('click', function (e) {
+                        fn(scope, { $event: e });
+                        scope.$apply();
+                    });
+                };
+            }
+        };
+    });
 
 
     document.addEventListener('deviceready', onDeviceReady.bind(this), false);
