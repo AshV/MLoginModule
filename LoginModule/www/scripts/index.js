@@ -11,60 +11,80 @@
         var alert;
 
         $scope.fbLogin = function ($event) {
-            $cordovaOauth.facebook("103140253133912", ["email"])
-                .then(function (result) {
-                    var accessToken = result.access_token;
-                    alert = $mdDialog.alert({
-                        title: 'Success',
-                        content: accessToken,
-                        ok: 'Close'
-                    });
-                    $mdDialog
-                        .show(alert)
-                        .finally(function () {
-                            alert = undefined;
-                        });
-                }, function (error) {
-                    alert = $mdDialog.alert({
-                        title: 'Error',
-                        content: error,
-                        ok: 'Close'
-                    });
-                    $mdDialog
-                        .show(alert)
-                        .finally(function () {
-                            alert = undefined;
-                        });
-                });
+            alert = $mdDialog.alert({
+                title: 'Attention',
+                content: 'Facebook',
+                ok: 'Close'
+            });
+            $mdDialog
+              .show(alert)
+              .finally(function () {
+                  alert = undefined;
+              });
+        //    $cordovaOauth.facebook("103140253133912", ["email"])
+        //        .then(function (result) {
+        //            var accessToken = result.access_token;
+        //            alert = $mdDialog.alert({
+        //                title: 'Success',
+        //                content: accessToken,
+        //                ok: 'Close'
+        //            });
+        //            $mdDialog
+        //                .show(alert)
+        //                .finally(function () {
+        //                    alert = undefined;
+        //                });
+        //        }, function (error) {
+        //            alert = $mdDialog.alert({
+        //                title: 'Error',
+        //                content: error,
+        //                ok: 'Close'
+        //            });
+        //            $mdDialog
+        //                .show(alert)
+        //                .finally(function () {
+        //                    alert = undefined;
+        //                });
+        //        });
         }
 
         $scope.twLogin = function ($event) {
-            $cordovaOauth.twitter("jIE4YRUAo7RYZXiRZhXXUA", "ZbieDM5VsX8E680ESgPXGRjbTALL1amIKIdrB2aRU")
-                .then(function (result) {
-                    var accessToken = result;
                     alert = $mdDialog.alert({
-                        title: 'Success',
-                        content: result,
-                        ok: 'Close'
-                    });
-                    $mdDialog
-                        .show(alert)
-                        .finally(function () {
-                            alert = undefined;
-                        });
+                title: 'Attention',
+                content: 'Twitter',
+                ok: 'Close'
+            });
+            $mdDialog
+              .show(alert)
+              .finally(function () {
+                  alert = undefined;
+              });
+            //$cordovaOauth.twitter("jIE4YRUAo7RYZXiRZhXXUA", "ZbieDM5VsX8E680ESgPXGRjbTALL1amIKIdrB2aRU")
+            //    .then(function (result) {
+            //        var accessToken = result;
+            //        alert = $mdDialog.alert({
+            //            title: 'Success',
+            //            content: result,
+            //            ok: 'Close'
+            //        });
+            //        $mdDialog
+            //            .show(alert)
+            //            .finally(function () {
+            //                alert = undefined;
+            //            });
 
-                }, function (error) {
-                    alert = $mdDialog.alert({
-                        title: 'Error',
-                        content: error,
-                        ok: 'Close'
-                    });
-                    $mdDialog
-                        .show(alert)
-                        .finally(function () {
-                            alert = undefined;
-                        });
-                });
+            //    }, function (error) {
+            //        alert = $mdDialog.alert({
+            //            title: 'Error',
+            //            content: error,
+            //            ok: 'Close'
+            //        });
+            //        $mdDialog
+            //            .show(alert)
+            //            .finally(function () {
+            //                alert = undefined;
+            //            });
+            //    });
         }
 
         $scope.showDialog = function ($event) {
