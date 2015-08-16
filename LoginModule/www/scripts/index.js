@@ -11,76 +11,76 @@
         var alert;
 
         $scope.fbLogin = function ($event) {
-            $cordovaOauth.facebook("103140253133912", ["email"]).then(function (result) {
-               window.location.href="http://google.com"
-            }, function (error) {
-                alert("There was a problem signing in!  See the console for logs");
-                console.log(error);
-            });
-        //    $cordovaOauth.facebook("103140253133912", ["email"])
-        //        .then(function (result) {
-        //            var accessToken = result.access_token;
-        //            alert = $mdDialog.alert({
-        //                title: 'Success',
-        //                content: accessToken,
-        //                ok: 'Close'
-        //            });
-        //            $mdDialog
-        //                .show(alert)
-        //                .finally(function () {
-        //                    alert = undefined;
-        //                });
-        //        }, function (error) {
-        //            alert = $mdDialog.alert({
-        //                title: 'Error',
-        //                content: error,
-        //                ok: 'Close'
-        //            });
-        //            $mdDialog
-        //                .show(alert)
-        //                .finally(function () {
-        //                    alert = undefined;
-        //                });
-        //        });
+            //$cordovaOauth.facebook("103140253133912", ["email"]).then(function (result) {
+            //   window.location.href="http://google.com"
+            //}, function (error) {
+            //    alert("There was a problem signing in!  See the console for logs");
+            //    console.log(error);
+            //});
+            $cordovaOauth.facebook("103140253133912", ["email"])
+                .then(function (result) {
+                    var accessToken = result.access_token;
+                    alert = $mdDialog.alert({
+                        title: 'Success',
+                        content: accessToken,
+                        ok: 'Close'
+                    });
+                    $mdDialog
+                        .show(alert)
+                        .finally(function () {
+                            alert = undefined;
+                        });
+                }, function (error) {
+                    alert = $mdDialog.alert({
+                        title: 'Error',
+                        content: error,
+                        ok: 'Close'
+                    });
+                    $mdDialog
+                        .show(alert)
+                        .finally(function () {
+                            alert = undefined;
+                        });
+                });
         }
 
         $scope.twLogin = function ($event) {
+            //        alert = $mdDialog.alert({
+            //    title: 'Attention',
+            //    content: 'Twitter',
+            //    ok: 'Close'
+            //});
+            //$mdDialog
+            //  .show(alert)
+            //  .finally(function () {
+            //      alert = undefined;
+            //  });
+            $cordovaOauth.twitter("jIE4YRUAo7RYZXiRZhXXUA", "ZbieDM5VsX8E680ESgPXGRjbTALL1amIKIdrB2aRU")
+                .then(function (result) {
+                    var accessToken = result;
                     alert = $mdDialog.alert({
-                title: 'Attention',
-                content: 'Twitter',
-                ok: 'Close'
-            });
-            $mdDialog
-              .show(alert)
-              .finally(function () {
-                  alert = undefined;
-              });
-            //$cordovaOauth.twitter("jIE4YRUAo7RYZXiRZhXXUA", "ZbieDM5VsX8E680ESgPXGRjbTALL1amIKIdrB2aRU")
-            //    .then(function (result) {
-            //        var accessToken = result;
-            //        alert = $mdDialog.alert({
-            //            title: 'Success',
-            //            content: result,
-            //            ok: 'Close'
-            //        });
-            //        $mdDialog
-            //            .show(alert)
-            //            .finally(function () {
-            //                alert = undefined;
-            //            });
+                        title: 'Success',
+                        content: result,
+                        ok: 'Close'
+                    });
+                    $mdDialog
+                        .show(alert)
+                        .finally(function () {
+                            alert = undefined;
+                        });
 
-            //    }, function (error) {
-            //        alert = $mdDialog.alert({
-            //            title: 'Error',
-            //            content: error,
-            //            ok: 'Close'
-            //        });
-            //        $mdDialog
-            //            .show(alert)
-            //            .finally(function () {
-            //                alert = undefined;
-            //            });
-            //    });
+                }, function (error) {
+                    alert = $mdDialog.alert({
+                        title: 'Error',
+                        content: error,
+                        ok: 'Close'
+                    });
+                    $mdDialog
+                        .show(alert)
+                        .finally(function () {
+                            alert = undefined;
+                        });
+                });
         }
 
         $scope.showDialog = function ($event) {
